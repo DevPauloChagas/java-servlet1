@@ -25,5 +25,4 @@ public class Banco {
 		return Banco.listaEmpresas;
 	}
 	
-
 }

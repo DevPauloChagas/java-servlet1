@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+}
+
+header{
+	text-align: center;
+	background: black;
+	padding: 50px;
+}
+
+h1{
+	font-size: 40px;
+	font-weight: 400;
+}

@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%
-//scriptlet
- String nomeEmpresa = (String) request.getAttribute("empresa");
- System.out.println(nomeEmpresa);
-%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +20,13 @@
 	</header>
 	
 	<main>
-		<h2>Empresa: <u><%= nomeEmpresa %></u>, cadastrada com sucesso!</h2>
+		<c:if test="${ not empty empresa }">
+			<h2>Empresa: <u> ${ empresa } </u>, cadastrada com sucesso!</h2>
+		</c:if>
+		
+		<c:if test="${ empty empresa }">
+			<h2>Nenhuma empresa cadastrada!</h2>
+		</c:if>
 	</main>
 
 </body>

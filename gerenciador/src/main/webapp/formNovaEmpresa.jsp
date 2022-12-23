@@ -1,3 +1,6 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:url value="/novaEmpresa"  var="linkServeletNovaEmpresa"/>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +18,13 @@
 		<h1>Seja bem-vindo(a) &nbsp;<i class="fa-solid fa-face-laugh-wink"></i></h1>
 	</header>
 	
+	
+	
 	<main>
-		<form action="/gerenciador/novaEmpresa" method="post">
-			<h2>Nome da empresa&nbsp; <input type="text" name="nome"> <input type="submit"> </h2>
+		<form action="${ linkServeletNovaEmpresa }" method="post">
+			<h2>Nome da empresa&nbsp; <input type="text" name="nome">
+			&nbsp;Data de abertura: <input type="text" name="data">&nbsp;<input type="submit"></h2>
+			</h2>
 		</form>
 	</main>
 

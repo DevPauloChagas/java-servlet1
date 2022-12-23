@@ -3,7 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="br.com.alura.gerenciador.servlet.Empresa" %>
-    
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,16 +25,13 @@
 	<main>
 	
 		<h3>Empresas Cadastradas!</h3>
-	
+		
+		
 		<ul>
-			<%
-				List<Empresa> lista = (List<Empresa>) request.getAttribute("empresas");
-				for(Empresa empresa : lista){
-			%>
-			 		<li><%= empresa.getNome() %></li>
-			<%
-				}
-			%>
+			<c:forEach items="${ empresas }" var="empresa">
+				<li>${ empresa.nome } &nbsp;&nbsp;
+				 <fmt:formatDate value="${empresa.dataAbertura }" pattern="dd/MM/yyyy"/></li>
+			</c:forEach>
 		</ul>
 		
 		

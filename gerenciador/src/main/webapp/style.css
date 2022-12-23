@@ -24,7 +24,7 @@ h2{
 	font-size: 25px;
 	font-weight: 400;
 	color: black;
-	background: #b9c2c8;
+	background: rgb(255, 128, 0);
 	padding: 20px;
 	border-radius: 10px;
 }
@@ -34,9 +34,11 @@ h3{
 	font-weight: 400;
 	color: black;
 	background: #8080ff;
+	margin-top: 30px;
 	padding: 20px;
 	border-radius: 10px 10px 0 0;
 }
+
 
 ul{
 	background-color: #b9c2c8;

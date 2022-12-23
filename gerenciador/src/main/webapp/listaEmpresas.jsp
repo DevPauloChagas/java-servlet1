@@ -23,9 +23,12 @@
 	</header>
 	
 	<main>
-	
-		<h3>Empresas Cadastradas!</h3>
 		
+		<c:if test="${ not empty empresa }">
+			<h2 class="frase-alerta">Empresa: <u> ${ empresa } </u>, cadastrada com sucesso!</h2>
+		</c:if>
+		
+		<h3>Empresas Cadastradas!</h3>
 		
 		<ul>
 			<c:forEach items="${ empresas }" var="empresa">

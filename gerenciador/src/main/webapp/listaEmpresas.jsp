@@ -1,16 +1,14 @@
+<%@page import="java.util.List"%>
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%
-//scriptlet
- String nomeEmpresa = (String) request.getAttribute("empresa");
- System.out.println(nomeEmpresa);
-%>
-
+<%@page import="br.com.alura.gerenciador.servlet.Empresa" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Empresa Cadstrada</title>
+<title>Empresas Cadstradas</title>
 <link rel="stylesheet" href="reset.css">
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +22,21 @@
 	</header>
 	
 	<main>
-		<h2>Empresa: <u><%= nomeEmpresa %></u>, cadastrada com sucesso!</h2>
+	
+		<h3>Empresas Cadastradas!</h3>
+	
+		<ul>
+			<%
+				List<Empresa> lista = (List<Empresa>) request.getAttribute("empresas");
+				for(Empresa empresa : lista){
+			%>
+			 		<li><%= empresa.getNome() %></li>
+			<%
+				}
+			%>
+		</ul>
+		
+		
 	</main>
 
 </body>

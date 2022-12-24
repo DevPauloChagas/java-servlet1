@@ -26,7 +26,7 @@ h2{
 	color: black;
 	background: rgb(255, 128, 0);
 	padding: 20px;
-	border-radius: 10px;
+	border-radius: 0 0 10px 10px;
 }
 
 h3{
@@ -47,7 +47,7 @@ ul{
 }
 
 li{
-	padding-bottom:20px;
+	padding-bottom:30px;
 	color: black;
 	font-size: 25px;
 	font-weight: 400;
@@ -57,4 +57,13 @@ input {
 	border: none;
 	border-radius: 5px;
 	height: 30px;
+}
+
+a{
+	padding: 5px;
+	border-radius: 5px;
+	background: rgb(255, 128, 0);
+	font-size: 15px;
+	text-decoration: none;
+	color:white;
 }

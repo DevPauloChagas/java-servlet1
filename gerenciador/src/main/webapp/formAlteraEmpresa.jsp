@@ -1,11 +1,12 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:url value="/novaEmpresa"  var="linkServeletNovaEmpresa"/>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<c:url value="/alteraEmpresa"  var="linkServeletNovaEmpresa"/>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Cadastro Nova Empresa</title>
+<title>Atualizar Empresa</title>
 <link rel="stylesheet" href="reset.css">
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,14 +19,16 @@
 		<h1>Seja bem-vindo(a) &nbsp;<i class="fa-solid fa-face-laugh-wink"></i></h1>
 	</header>
 	
-	
-	
 	<main>
-	
-		<h3>Cadastre a sua empresa&nbsp;<i class="fa-solid fa-face-laugh-wink"></i></h3>
+	 	
+	 	<h3>Atualizando cadastro</h3>
+	 	
 		<form action="${ linkServeletNovaEmpresa }" method="post">
-			<h2>Nome da empresa&nbsp; <input type="text" name="nome">
-			&nbsp;Data de abertura: <input type="text" name="data">&nbsp;<input type="submit"></h2>
+			<h2>Nome da empresa&nbsp; <input type="text" name="nome" value="${ empresa.nome }">
+			&nbsp;Data de abertura: <input type="text" name="data" value="
+			 <fmt:formatDate value="${empresa.dataAbertura }" pattern="dd/MM/yyyy"/>" />&nbsp;
+			 <input type="text" name="id" value="${empresa.id}" hidden="id">
+			<input type="submit"></h2>
 			</h2>
 		</form>
 	</main>
